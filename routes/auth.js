@@ -7,7 +7,7 @@ const { validarJWT } = require('../middlewares/validar-jwt');
 const { mostrarCitasDisponibles } = require('../controllers/citaController'); // Asegúrate de que el nombre del controlador y la ruta sean correctos
 const { reservarCita } = require('../controllers/citaController');
 const { citasDeUsuario } = require('../controllers/citaController');
-const { obtenerProfesionales } = require('../controllers/profesionalController');
+const { obtenerProfesionales, obtenerEspprofesional } = require('../controllers/profesionalController');
 const { obtenerEspecialidades } = require('../controllers/especialidadController');
  
 const router = Router();
@@ -41,5 +41,8 @@ router.get('/profesionales', obtenerProfesionales);
 
 //Ruta para obtner lista de especialidades
 router.get('/especialidades', obtenerEspecialidades);
+
+//Ruta para obtener especialidades por profesional seleccionado
+router.get('/profesionales/:id/especialidades', obtenerEspprofesional);
 
 module.exports = router;

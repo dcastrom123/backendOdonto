@@ -10,17 +10,10 @@ const profesionalSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  especialidad: {
+  especialidades: [{
     type: String,
     required: true,
-  },/*
-  especialidades: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Especialidad',
-    },
-  ],*/
-  // Otros campos específicos del profesional
+  }],
 });
 
 const Profesional = mongoose.model('Profesional', profesionalSchema);
