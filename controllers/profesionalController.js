@@ -20,7 +20,6 @@ const obtenerProfesionales = async (req, res) => {
     try {
         // Obtener el id del profesional desde los parámetros de la solicitud
         const { id } = req.params;
-
         // Buscar el profesional en la base de datos por su id
         const profesional = await Profesional.findById(id);
         console.log("Busca al profesional por id");
@@ -44,6 +43,7 @@ const obtenerProfesionales = async (req, res) => {
     const { id } = req.params;
     const profesional = await Profesional.findById(id);
     console.log("Busca al profesional por id")
+    console.log(req.params)
     // Si no se encuentra el profesional, enviar un mensaje de error
     if (!profesional) {
       return res.status(404).json({ mensaje: 'Profesional no encontrado' });
