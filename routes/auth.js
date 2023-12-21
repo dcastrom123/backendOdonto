@@ -8,7 +8,7 @@ const { mostrarCitasDisponibles } = require('../controllers/citaController'); //
 const { reservarCita } = require('../controllers/citaController');
 const { citasDeUsuario } = require('../controllers/citaController');
 const { obtenerProfesionales, obtenerEspprofesional, seleccionarProfesional } = require('../controllers/profesionalController');
-const { obtenerEspecialidades } = require('../controllers/especialidadController');
+const { obtenerEspecialidades, selecciorEspecialidad } = require('../controllers/especialidadController');
  
 const router = Router();
 
@@ -41,6 +41,9 @@ router.get('/profesionales', obtenerProfesionales);
 
 //Ruta para obtner lista de especialidades
 router.get('/especialidades', obtenerEspecialidades);
+
+//Ruta para seleccionar especialidad despues de seleccionar profesional
+router.get('/especialidades/:nombreEspecialidad', selecciorEspecialidad)
 
 //Ruta para seleccionar profesional
 router.get('/profesionales/:id', seleccionarProfesional)
